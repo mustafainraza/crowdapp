@@ -1,13 +1,13 @@
 import { View, Text, Button } from "react-native";
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import AllProjects from "./AllProjects";
+import Home from "./Home";
 import { StatusBar } from "expo-status-bar";
 import {
+  Octicons,
   Entypo,
   FontAwesome,
-  Octicons,
-  MaterialCommunityIcons,
+  FontAwesome5,
 } from "@expo/vector-icons";
 
 const Drawer = createDrawerNavigator();
@@ -35,25 +35,16 @@ export default function Drawer_Nav() {
       >
         <Drawer.Screen
           options={{
+            drawerIcon: () => (
+              <FontAwesome5 name="user" size={24} color="#F23B25" />
+            ),
+          }}
+          name="Profile"
+          component={Profile}
+        />
+        <Drawer.Screen
+          options={{
             drawerIcon: () => <Entypo name="home" size={24} color="#F23B25" />,
-          }}
-          name="Home"
-          component={Home}
-        />
-        <Drawer.Screen
-          options={{
-            drawerIcon: () => (
-              <MaterialCommunityIcons name="login" size={26} color="#F23B25" />
-            ),
-          }}
-          name="Login"
-          component={Login}
-        />
-        <Drawer.Screen
-          options={{
-            drawerIcon: () => (
-              <Octicons name="project" size={24} color="#F23B25" />
-            ),
             headerRight: () => (
               <FontAwesome
                 style={{ paddingRight: 20 }}
@@ -63,8 +54,17 @@ export default function Drawer_Nav() {
               />
             ),
           }}
-          name="AllProjects"
-          component={AllProjects}
+          name="Home"
+          component={Home}
+        />
+        <Drawer.Screen
+          options={{
+            drawerIcon: () => (
+              <Octicons name="project" size={26} color="#F23B25" />
+            ),
+          }}
+          name="Funded Projects"
+          component={Pledge_project}
         />
         <Drawer.Screen
           options={{
@@ -80,17 +80,17 @@ export default function Drawer_Nav() {
   );
 }
 
-function Home() {
+function Profile() {
   return (
     <View style={{ flex: 1, fontSize: 30 }}>
-      <Text style={{ color: "red" }}>Welcome to the Home!</Text>
+      <Text style={{ color: "red" }}>Welcome to the Profile!</Text>
     </View>
   );
 }
-function Login() {
+function Pledge_project() {
   return (
     <View style={{ flex: 1, fontSize: 30 }}>
-      <Text style={{ color: "red" }}>Welcome to the Login!</Text>
+      <Text style={{ color: "red" }}>Welcome to the Pledge_project!</Text>
     </View>
   );
 }
