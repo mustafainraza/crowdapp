@@ -1,4 +1,5 @@
 import React from "react";
+import { Platform } from "react-native";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import POPULAR from "./POPULAR";
 import NEWEST from "./Newest";
@@ -18,7 +19,7 @@ export default function AllProjects() {
         },
         tabBarLabelStyle: {
           fontSize: 12,
-          fontFamily: "serif",
+          fontFamily: Platform.OS === "ios" ? "Arial" : "serif",
           fontWeight: "bold",
         },
         tabBarStyle: {

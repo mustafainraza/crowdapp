@@ -22,7 +22,6 @@ export default function Drawer_Nav() {
           drawerType: "front",
           headerTintColor: { color: "white" },
           headerStyle: {
-            height: 80,
             backgroundColor: "#F23B25",
           },
 

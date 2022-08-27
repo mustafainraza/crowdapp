@@ -25,10 +25,9 @@ export default function App() {
           name="Details"
           component={Details}
           options={{
-            title: "Cameron",
+            title: "Product Details",
             headerShown: true,
             headerStyle: {
-              height: 80,
               backgroundColor: "#F23B25",
             },
             headerTitleStyle: {

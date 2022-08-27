@@ -1,4 +1,10 @@
-import { View, Text, ImageBackground, Button } from "react-native";
+import {
+  View,
+  Text,
+  ImageBackground,
+  Button,
+  SafeAreaView,
+} from "react-native";
 import React from "react";
 import AppButton from "./btn";
 
